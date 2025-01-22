@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
     <link rel="stylesheet" href="style.css">
     <title>Speaker Test</title>
 </head>
@@ -13,24 +13,31 @@
     <div>
         <h1 class="textoLeitura">Hello World!</h1>
         <button onclick="lerTexto(this)">
-            <i class="fa-solid fa-ear-listen"></i>
+            <span class="material-symbols-outlined">
+                voice_selection
+                </span>
         </button>
     </div>
     <div>
         <h2 class="textoLeitura">Teste do código de Speaker.</h2>
         <button onclick="lerTexto(this)">
-            <i class="fa-solid fa-ear-listen"></i>
+            <span class="material-symbols-outlined">
+                voice_selection
+                </span>
         </button>
     </div>
 
     <div>
         <h3 class="textoLeitura">Ler todos os textos da página</h3>
         <button onclick="lerTexto('all')">
-            <i class="fa-solid fa-ear-listen"></i>
+            <span class="material-symbols-outlined">
+                voice_selection
+                </span>
         </button>
     </div>
 
     <script src="script.js" />
+    <script src="https://kit.fontawesome.com/3e33c340ee.js" crossorigin="anonymous"></script>
 </body>
 
 </html>
