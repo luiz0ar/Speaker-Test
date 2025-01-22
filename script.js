@@ -4,16 +4,18 @@ setTimeout(() => {
     });
    }, 5000);
 
-function lerTexto(control) {
+function lerTexto(button) {
     let mensagem = new SpeechSynthesisUtterance();
     let vozes = speechSynthesis.getVoices();
-    valueByClass = document.getElementsByClassName("textoLeitura");
-    if(control === "all"){
+    if (button === "all") {
+        let valueByClass = document.getElementsByClassName("textoLeitura");
         for (let i = 0; i < valueByClass.length; i++) {
             mensagem.text += `${valueByClass[i].textContent} `;
-          }
-    }else{
-        mensagem.text = valueByClass[0].textContent;
+        }
+    } else {
+        let parentElement = button.parentElement;
+        let textoElemento = parentElement.querySelector(".textoLeitura").textContent;
+        mensagem.text = textoElemento.trim();
     }
     
     console.log(mensagem.text);
