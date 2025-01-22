@@ -4,10 +4,19 @@ setTimeout(() => {
     });
    }, 5000);
 
-function lerTexto() {
+function lerTexto(control) {
     let mensagem = new SpeechSynthesisUtterance();
     let vozes = speechSynthesis.getVoices();
-    mensagem.text = document.getElementById("texto-principal").innerHTML;
+    valueByClass = document.getElementsByClassName("textoLeitura");
+    if(control === "all"){
+        for (let i = 0; i < valueByClass.length; i++) {
+            mensagem.text += `${valueByClass[i].textContent} `;
+          }
+    }else{
+        mensagem.text = valueByClass[0].textContent;
+    }
+    
+    console.log(mensagem.text);
     mensagem.voice = vozes[1];
     mensagem.lang = "pt-BR";
     mensagem.volume = 1; 
