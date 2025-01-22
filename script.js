@@ -5,8 +5,14 @@ setTimeout(() => {
    }, 5000);
 
 function lerTexto() {
-    var mensagem = new SpeechSynthesisUtterance();
+    let mensagem = new SpeechSynthesisUtterance();
+    let vozes = speechSynthesis.getVoices();
     mensagem.text = document.getElementById("texto-principal").innerHTML;
+    mensagem.voice = vozes[1];
+    mensagem.lang = "pt-BR";
+    mensagem.volume = 1; 
+    mensagem.rate = 1; 
+    mensagem.pitch = 0.5; 
     speechSynthesis.speak(mensagem);
 }
 lerTexto();
